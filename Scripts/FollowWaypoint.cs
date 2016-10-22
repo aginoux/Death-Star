@@ -7,7 +7,6 @@ public class FollowWaypoint : MonoBehaviour {
 	private Transform target;
 
 	public float[] path_speed_array;
-	public float speed_path = 2f;
 	public float distance_path_nextwaypoint = 0.2f;
 	public bool finish = false;
 
