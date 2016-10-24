@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 public class Laser : MonoBehaviour {
 
 	public float speed = 10f;
-	public int waitBeforeDying = 4;
+	public float waitBeforeDying = 4;
 
 	void Start()
 	{
@@ -25,6 +25,17 @@ public class Laser : MonoBehaviour {
 
 	void OnTriggerEnter()
 	{
+		//print ("destroy");
+		Destroy (gameObject);
+	}
+	void OnTriggerExit()
+	{
+		//print ("destroy");
+		Destroy (gameObject);
+	}
+	void OnTriggerStay()
+	{
+		//print ("destroy");
 		Destroy (gameObject);
 	}
 }

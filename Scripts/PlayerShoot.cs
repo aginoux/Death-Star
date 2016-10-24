@@ -21,6 +21,7 @@ public class PlayerShoot : MonoBehaviour {
 	void Start(){
 		ui_canvas = GameObject.FindGameObjectWithTag ("UI");
 		StartCoroutine (Fire());
+		//Cursor.visible = false;
 	}
 
 	void Update () {
@@ -43,13 +44,15 @@ public class PlayerShoot : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast (ray, out hit, Mathf.Infinity, mask)) {
 			//Debug.Log ("Hit:"+ hit.collider.name);
+			Vector3 target_1 = new Vector3 (hit.point.x + 2,hit.point.y,hit.point.z);
+			Vector3 target_2 = new Vector3 (hit.point.x - 2,hit.point.y,hit.point.z);
 			if (laser_right) 
 			{
-				animLaser (hit.point, ajust_x_start_laser, ajust_y_start_laser, ajust_z_start_laser);
+				animLaser (target_1, ajust_x_start_laser, ajust_y_start_laser, ajust_z_start_laser);
 			} 
 			else 
 			{
-				animLaser (hit.point,-ajust_x_start_laser,ajust_y_start_laser,ajust_z_start_laser);
+				animLaser (target_2,-ajust_x_start_laser,ajust_y_start_laser,ajust_z_start_laser);
 			}
 
 			hit.collider.gameObject.SendMessage ("applyDamage", 0.5f);
