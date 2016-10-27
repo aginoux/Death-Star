@@ -12,7 +12,7 @@ public class R2D2Sounds : MonoBehaviour {
 	{
 		if (collision_with.gameObject.tag == "Player")
 		{
-			print ("R2D2");
+			//print ("R2D2");
 			R2D2_sound_effect.Play ();
 		}
 	}
