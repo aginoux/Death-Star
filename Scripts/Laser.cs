@@ -23,19 +23,22 @@ public class Laser : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider collision_with)
 	{
 		//print ("destroy");
 		Destroy (gameObject);
 	}
+
 	void OnTriggerExit()
 	{
 		//print ("destroy");
 		Destroy (gameObject);
 	}
+
 	void OnTriggerStay()
 	{
 		//print ("destroy");
 		Destroy (gameObject);
 	}
+
 }
