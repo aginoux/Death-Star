@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundEffects : MonoBehaviour {
+public class TIESoundEffects : MonoBehaviour {
 
 	public AudioSource[] tie_effects;
 	int chose_music;
