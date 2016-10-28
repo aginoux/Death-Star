@@ -14,6 +14,7 @@ public class StartStopSpawn : MonoBehaviour {
 	{
 		if (collision_with.gameObject.tag == "Player") 
 		{
+            //Function from Spawn.
 			spawnObject.SendMessage ("StartSpawn");
 		}
 	}

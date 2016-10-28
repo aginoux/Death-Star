@@ -8,7 +8,7 @@ public class HealthEnemy : MonoBehaviour {
 	GameObject ui_canvas;
 
 	void Start(){
-		ui_canvas = GameObject.FindGameObjectWithTag ("UI");
+		ui_canvas = GameObject.FindGameObjectWithTag ("UI_score");
 	}
 
 	void Update()

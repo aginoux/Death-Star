@@ -26,7 +26,7 @@ public class PlayerShoot : MonoBehaviour {
 
 	void Start(){
 		wait_between_switching_laser = 0;
-		ui_canvas = GameObject.FindGameObjectWithTag ("UI");
+		ui_canvas = GameObject.FindGameObjectWithTag ("UI_score");
 		StartCoroutine (Fire());
 		//Cursor.visible = false;
 	}
