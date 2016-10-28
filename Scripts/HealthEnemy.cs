@@ -15,13 +15,15 @@ public class HealthEnemy : MonoBehaviour {
 	{
 		if (current_health_enemy <= 0) 
 		{
+			print ("destroy");
 			ui_canvas.SendMessage ("increaseScore", add_x_points_to_score);
-			Destroy (transform.parent.gameObject);
+			Destroy (gameObject);
 		}
 	}
 
 	void applyDamage(float damage)
 	{
+		print ("test");
 		if (current_health_enemy > 0) 
 		{
 			current_health_enemy -= damage;

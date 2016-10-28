@@ -17,8 +17,10 @@ public class Spawn : MonoBehaviour {
 		}
 	}
 
-	void Start()
+	void StartSpawn()
 	{
+		GameObject path_enemy = GameObject.FindGameObjectWithTag ("PathEnemy");
+		path_enemy.GetComponent<FollowWaypointsEnemy> ().enabled = true;
 		StartCoroutine (Fire());
 	}
 

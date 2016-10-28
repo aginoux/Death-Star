@@ -15,6 +15,7 @@ public class PlayerShoot : MonoBehaviour {
 	public float depth_axis_z_mouse = 200;
 	public float rate_fire = 1;
 	float wait_between_switching_laser = 1;
+	public float damage = 1f;
 	bool laser_right_up = false;
 	bool laser_right_down = false;
 	bool laser_left_up = false;
@@ -48,9 +49,10 @@ public class PlayerShoot : MonoBehaviour {
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast (ray, out hit, Mathf.Infinity, mask)) {
-			//Debug.Log ("Hit:"+ hit.collider.name);
+			Debug.Log ("Hit:"+ hit.collider.name);
 			Vector3 target_1 = new Vector3 (hit.point.x,hit.point.y,hit.point.z);
 			Vector3 target_2 = new Vector3 (hit.point.x,hit.point.y,hit.point.z);
+			print ("Fire");
 			if (laser_right_up) 
 			{
 				animLaser (target_1, ajust_x_start_laser, ajust_y_start_laser, ajust_z_start_laser);
@@ -68,7 +70,7 @@ public class PlayerShoot : MonoBehaviour {
 				animLaser (target_2,-ajust_x_start_laser,-ajust_y_start_laser,ajust_z_start_laser);
 			}
 
-			hit.collider.gameObject.SendMessage ("applyDamage", 0.5f);
+			hit.collider.gameObject.SendMessage ("applyDamage", damage);
 			ui_canvas.SendMessage ("increaseScore", add_x_points_to_score);
 		} 
 		else
